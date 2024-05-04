@@ -1,0 +1,60 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'nome',
+      'marca',
+      'quantidade',
+      'preco',
+      'descricao',
+      'localizacao'
+    ],
+    properties: {
+      nome: {
+        bsonType: 'string',
+        description: 'deve ser uma string'
+      },
+      marca: {
+        bsonType: 'string',
+        description: 'deve ser uma string'
+      },
+      quantidade: {
+        bsonType: 'int',
+        description: 'deve ser um inteiro'
+      },
+      preco: {
+        bsonType: 'double',
+        description: 'deve ser um double'
+      },
+      tipo: {
+        'enum': [
+          'Alimentos',
+          'Bebidas',
+          'Limpeza',
+          'Higiene pessoal',
+          'Casa',
+          'Produtos para animais',
+          'Saúde'
+        ],
+        description: 'deve ser um dos valores de <enum> e é obrigatório'
+      },
+      'localizacao': {
+        bsonType: 'object',
+        required: [
+          'corredor',
+          'setor'
+        ],
+        properties: {
+          corredor: {
+            bsonType: 'string',
+            description: 'deve ser uma string e é obrigatório'
+          },
+          setor: {
+            bsonType: 'string',
+            description: 'deve ser uma string e é obrigatório'
+          }
+        }
+      }
+    }
+  }
+}
